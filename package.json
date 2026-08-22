@@ -1,0 +1,20 @@
+{
+  "name": "eyrove-prompt-lite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Open-source BYOK browser extension for basic image prompt reverse, local palettes and display translation.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geslie1/eyrove-prompt-lite.git"
+  },
+  "homepage": "https://eyrove.com/en/eyrove-prompt",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
+

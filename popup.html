@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EYROVE Prompt Lite</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="mark">E</span>
+    <div><strong>EYROVE Prompt Lite</strong><small id="subtitle"></small></div>
+    <button id="settings" class="iconButton" title="Settings">⚙</button>
+  </header>
+  <main>
+    <label id="dropZone" class="dropZone">
+      <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <img id="preview" alt="">
+      <span id="dropCopy"><b id="upload"></b><small id="drop"></small></span>
+    </label>
+    <button id="analyze" class="primary"></button>
+    <p id="status" class="status" role="status"></p>
+
+    <section id="resultSection" hidden>
+      <div class="sectionTitle"><strong id="resultTitle"></strong><span id="ratio"></span></div>
+      <p id="summary"></p>
+      <div id="tags" class="tags"></div>
+      <div class="promptHeader"><strong id="promptTitle"></strong><button id="copyPrompt"></button></div>
+      <textarea id="prompt" readonly></textarea>
+      <button id="translate" class="secondary"></button>
+      <small id="translateHint" class="hint"></small>
+      <div id="translatedBlock" hidden>
+        <strong id="translatedTitle"></strong>
+        <textarea id="translated" readonly></textarea>
+      </div>
+    </section>
+
+    <section>
+      <div class="sectionTitle"><strong id="paletteTitle"></strong></div>
+      <div id="palette" class="palette"></div>
+      <small id="paletteHint" class="hint"></small>
+    </section>
+
+    <section>
+      <div class="sectionTitle"><strong id="historyTitle"></strong></div>
+      <div id="history" class="history"></div>
+    </section>
+    <p id="boundary" class="boundary"></p>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

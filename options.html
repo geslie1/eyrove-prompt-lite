@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EYROVE Prompt Lite settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <header><span>E</span><div><h1>EYROVE Prompt Lite</h1><p>Open-source BYOK settings</p></div></header>
+    <form id="form">
+      <label>Interface language
+        <select id="locale">
+          <option value="en">English</option><option value="zh-CN">简体中文</option><option value="ja">日本語</option><option value="ko">한국어</option><option value="de">Deutsch</option><option value="fr">Français</option><option value="es">Español</option>
+        </select>
+      </label>
+      <label>OpenAI-compatible chat completions endpoint
+        <input id="endpoint" type="url" placeholder="https://example.com/v1/chat/completions" required>
+      </label>
+      <label>Vision-capable model
+        <input id="model" placeholder="your-vision-model" required>
+      </label>
+      <label>API Key
+        <input id="apiKey" type="password" autocomplete="off" placeholder="Stored only in Chrome local storage" required>
+      </label>
+      <button type="submit">Save settings</button>
+      <p id="status" role="status"></p>
+    </form>
+    <section>
+      <h2>Privacy boundary</h2>
+      <p>The key is stored locally and is sent only to the endpoint you configure. Lite has no EYROVE account, points, advanced dimensions, precision tiers, image generation, publishing, or provider fallback.</p>
+      <p>Endpoint permission is requested only when you save. Review the source before installing.</p>
+      <a href="https://eyrove.com/zh-cn/eyrove-prompt" target="_blank" rel="noreferrer">Explore EYROVE Prompt Pro</a>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
