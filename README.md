@@ -1,41 +1,61 @@
 # EYROVE Prompt Lite
 
-EYROVE Prompt Lite is the deliberately limited, open-source BYOK edition of EYROVE Prompt.
+EYROVE Prompt Lite is an open-source BYOK Chrome extension for turning images into clear, reusable prompt insights. Bring your own OpenAI-compatible vision endpoint, analyze images in a focused workflow, and keep your settings and recent results in Chrome.
 
-[Source repository](https://github.com/geslie1/eyrove-prompt-lite) · [Product page](https://eyrove.com/en/eyrove-prompt) · [Pro edition](https://eyrove.com/en/eyrove-prompt#install)
+[Experience the released version](https://eyrove.com/en/eyrove-prompt#install) · [Download v0.1.0](https://github.com/geslie1/eyrove-prompt-lite/releases/download/v0.1.0/eyrove-prompt-lite-chrome.zip) · [View releases](https://github.com/geslie1/eyrove-prompt-lite/releases) · [Explore EYROVE Prompt Pro](https://eyrove.com/en/eyrove-prompt)
 
-It provides:
+## Features
 
-- one fixed basic image-to-prompt contract;
-- a deterministic color palette calculated locally in the popup;
-- translation into the selected interface language for reading only;
-- local history stored in Chrome.
+- **Image-to-prompt analysis** — upload, drag, paste, or select an image from the browser context menu.
+- **Structured prompt insights** — receive a concise summary, visual style tags, a suggested aspect ratio, and a reusable image-generation prompt.
+- **Local color palette** — extract a deterministic palette directly in the popup for uploaded images.
+- **Translation for reading** — view the prompt in English, Simplified Chinese, Japanese, Korean, German, French, or Spanish while keeping the original prompt intact.
+- **Local history** — revisit up to 30 recent results stored in Chrome.
+- **Flexible BYOK setup** — connect an OpenAI-compatible Chat Completions endpoint and choose your own vision-capable model.
+- **Direct data flow** — analysis and translation requests go directly to the endpoint you configure.
 
-It deliberately does not provide advanced analysis dimensions, Standard/High Precision tiers, EYROVE accounts or points, image generation, model comparison, saving, publishing, or private provider fallback.
+## Try the released version
 
-## Install for development
+Open the [EYROVE Prompt experience page](https://eyrove.com/en/eyrove-prompt#install) to view the current product experience and installation entry.
 
-1. Open `chrome://extensions` and enable Developer mode.
-2. Select **Load unpacked**.
-3. Choose this directory.
-4. Open Options and enter an OpenAI-compatible Chat Completions endpoint, a vision-capable model and your API key.
+To install the latest published build:
 
-The extension requests access only to the configured endpoint origin when you save the settings. The key stays in Chrome local storage and is sent only to that endpoint.
+1. [Download EYROVE Prompt Lite v0.1.0](https://github.com/geslie1/eyrove-prompt-lite/releases/download/v0.1.0/eyrove-prompt-lite-chrome.zip).
+2. Unzip the downloaded package.
+3. Open `chrome://extensions` and enable **Developer mode**.
+4. Select **Load unpacked** and choose the extracted `eyrove-prompt-lite` directory.
+5. Open **Options** and configure your endpoint, vision model, API key, and interface language.
 
-## Data flow
+## How it works
 
-- Images, prompts and the API key are sent only to the endpoint explicitly configured by the user.
-- The color palette is calculated locally in the popup.
+1. Configure your BYOK endpoint and model in **Options**.
+2. Add an image by uploading, dragging, pasting, or using the image context menu.
+3. Select **Reverse prompt** to create the structured result.
+4. Copy the original prompt, view a translation, inspect the local palette, or reopen a result from local history.
+
+The extension requests access to the configured endpoint origin when you save the settings. Your API key is stored in `chrome.storage.local` and is sent directly to that endpoint when you start analysis or translation.
+
+## Development
+
+1. Clone this repository.
+2. Open `chrome://extensions` and enable **Developer mode**.
+3. Select **Load unpacked** and choose the repository directory.
+4. Configure the extension from **Options**.
+
+Run the automated checks with:
+
+```bash
+npm test
+```
+
+## Privacy and security
+
+- Color palette extraction runs locally in the popup.
 - Settings and up to 30 recent results remain in `chrome.storage.local`.
-- Lite does not call EYROVE APIs, include analytics, load remote code or provide provider fallback.
+- Endpoint access is requested at runtime for the origin selected by the user.
+- Images, prompts, and the API key are sent directly to the configured endpoint for the requested operation.
 
-## Security
-
-Read [SECURITY.md](SECURITY.md) before reporting a vulnerability. Never include API keys in issues, screenshots or logs.
-
-## Pro edition
-
-EYROVE Prompt Pro uses a private asynchronous EYROVE reverse API and adds advanced analysis, account billing, generation and creation workflows. The Pro implementation and its private instructions are not part of this repository export.
+Read [PRIVACY.md](PRIVACY.md) for the complete data-flow description and [SECURITY.md](SECURITY.md) before reporting a vulnerability. Never include API keys, personal images, provider responses, or browsing data in public issues.
 
 ## License
 
