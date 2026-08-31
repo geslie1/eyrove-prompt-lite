@@ -13,6 +13,7 @@ EYROVE Prompt Lite is an open-source BYOK Chrome extension for turning images in
 - **Local history** — revisit up to 30 recent results stored in Chrome.
 - **Flexible BYOK setup** — connect an OpenAI-compatible Chat Completions endpoint and choose your own vision-capable model.
 - **Direct data flow** — analysis and translation requests go directly to the endpoint you configure.
+- **Installable Krea2 Skill** — turn an uploaded reference image into one detailed, 500+ word Krea2-ready English prompt.
 
 ## Try the released version
 
@@ -47,6 +48,22 @@ Run the automated checks with:
 ```bash
 npm test
 ```
+
+## Install the Krea2 image-to-prompt Skill
+
+This repository includes the [`krea2-image-to-prompt`](skills/krea2-image-to-prompt/SKILL.md) Skill. Install it automatically into the detected compatible agent environment with:
+
+```bash
+npx skills add geslie1/eyrove-prompt-lite --skill krea2-image-to-prompt -y
+```
+
+To inspect the available Skills before installing:
+
+```bash
+npx skills add geslie1/eyrove-prompt-lite --list
+```
+
+After installation, upload a reference image and invoke `$krea2-image-to-prompt`. The Skill returns one English Krea2 prompt of at least 500 words, with no analysis or parameter recommendations around it.
 
 ## Privacy and security
 

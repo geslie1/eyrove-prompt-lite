@@ -1,0 +1,4 @@
+interface:
+  display_name: "Krea2 Image to Prompt"
+  short_description: "Turn reference images into 500+ word Krea2 prompts"
+  default_prompt: "Use $krea2-image-to-prompt to turn my uploaded image into one detailed Krea2-ready English prompt."
